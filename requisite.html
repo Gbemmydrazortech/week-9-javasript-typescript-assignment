@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript Prerequisite</title>
+</head>
+
+<body>
+  <script>
+  /*------Arrow Function-----*/
+    square = (n) => n * n;
+    console.log(5 * 5);
+    
+   greet = (name) => `Hello, ${name}!`;
+    console.log(greet("Gbemmydrazortech"));
+    
+    multiply = (a, b) => a * b;
+    console.log(7 * 3);
+    
+    /*------Destructing----*/
+    const  student = {
+      name: "Amaka", 
+      age: 22,
+      course: "Front-end Development", 
+      city: "Abuja"
+    }
+    
+    const {name, course} = student;
+    console.log(name);
+    console.log(course);
+    
+    const {age: studentAge} = student;
+    console.log(studentAge);
+    
+   const scores = [88, 72, 95, 60, 45]
+    
+    const [firstScore, secondScore, tScore, fScore, lScore] = scores;
+    console.log(firstScore, secondScore);
+    
+    
+    /*----Spread Operator----*/
+   const frontend = ["HTML", "CSS", "JavaScript"];
+    
+    const backend = ["Node.js", "Express", "MongoDB"];
+    
+    const fullStack = [...frontend, ...backend];
+    console.log(fullStack);
+    
+    const userProfile = {
+      username: "code_ade", 
+      email: "ade@example.com"
+    };
+    
+    console.log(userProfile);
+    
+    const userUpdate = {
+      ...userProfile, 
+      email: "newemail@example.com"
+    };
+    
+    console.log(userUpdate);
+    
+    /*---literal Template----*/
+    
+   const studentName = "Fatima";
+   const age = 24;
+   
+   /*const intro = "My name is " + name + " and I am " + age + " years old."*/
+ 
+    const intro = `My name is ${studentName} and i am ${age} years old.`;
+    
+    console.log(intro);
+    
+    
+    const width = 8;
+    const height = 5;
+    const sum = width * height;
+    const areaValue = `The area of the rectangle is ${sum}`;
+    
+    console.log(areaValue);
+    
+    /*-----Array Method---*/
+    
+   const products = [
+   { name: "Laptop", price: 450000, inStock: true },
+   { name: "Mouse", price: 8000, inStock: true },
+   { name: "Monitor", price: 120000, inStock: false },
+   { name: "Keyboard", price: 15000, inStock: true }
+  ];
+  
+  const productNames = products.map(product => product.name);
+  
+  console.log(productNames);
+  
+  const inStockProducts = products.filter(product => product.inStock);
+  console.log(inStockProducts);
+  
+  const availableProductNames = inStockProducts.map(product => product.name.toUpperCase());
+  
+  console.log(availableProductNames);
+  
+  
+  /*-----Ternary & Logical---*/
+  
+    const role = "editor";
+    const cartItems = 0;
+    
+    
+
+    const access = role === "admin" ?
+    "Full Access" :
+    role === "editor" ?
+    "Edit Access" :
+   role === "viewer" ?
+   "Read Only" :
+    "No Access";
+
+   console.log(access);
+   /*When cartItems is 0, the expression returns 0 because zero is falsy */
+   
+   console.log(cartItems && "view cart");
+   
+   /*Using cartItems > 0 && "view cart" ensures the message appears only when the cart contains at least one item*/
+   
+   console.log(cartItems > 0 && "view cart");
+</script>
+</body>
+
+</html>
